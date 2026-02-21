@@ -65,9 +65,11 @@ export default function Navbar() {
       <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
         <div className="container nav-container">
           <a href="/" className="logo">
-            <span className="logo-text">
-              Los <span className="highlight">Chanchitos</span>
-            </span>
+            <img
+              src="/images/chanchitos-logo.png"
+              alt="Los Chanchitos Logo"
+              className="logo-img"
+            />
           </a>
 
           <nav className="nav-links desktop-nav">

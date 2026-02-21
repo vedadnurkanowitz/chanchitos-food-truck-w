@@ -127,15 +127,11 @@ button {
   gap: 0.5rem;
 }
 
-.logo-text {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--color-text);
-}
-
-.highlight {
-  color: var(--color-primary);
+.logo-img {
+  height: 60px; /* Resize logo to fit well in the navbar */
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .nav-links {
