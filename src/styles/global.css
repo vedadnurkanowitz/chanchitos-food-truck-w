@@ -155,7 +155,7 @@ button {
 }
 
 .desktop-cta {
-  display: none;
+  display: none !important;
 }
 
 .menu-toggle {
@@ -169,7 +169,7 @@ button {
     display: flex;
   }
   .desktop-cta {
-    display: inline-flex;
+    display: inline-flex !important;
   }
   .menu-toggle {
     display: none;
@@ -227,6 +227,7 @@ button {
 
 .section {
   padding: var(--spacing-xl) 0;
+  scroll-margin-top: 80px;
 }
 
 /* Hero Section */
@@ -283,10 +284,10 @@ button {
 
 .hero-title {
   font-size: clamp(
-    2.5rem,
-    6vw,
+    2rem,
+    8vw,
     4.25rem
-  ); /* Reduced maximum and scaling font size */
+  ); /* Reduced maximum and scaling font size for mobile */
   line-height: 1.25; /* Increased line-height for readability */
   color: white;
   margin-bottom: var(--spacing-lg); /* Increased space below title */
@@ -380,7 +381,13 @@ button {
   border: 2px solid transparent;
   border-radius: var(--border-radius);
   transition: all 0.3s ease;
-  min-width: 200px;
+  min-width: unset;
+}
+
+@media (min-width: 768px) {
+  .step-btn {
+    min-width: 200px;
+  }
 }
 
 .step-btn.active {
@@ -604,10 +611,16 @@ button {
 .about-image {
   width: 100%;
   height: auto;
-  min-height: 400px;
+  min-height: 250px;
   object-fit: cover;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow-lg);
+}
+
+@media (min-width: 768px) {
+  .about-image {
+    min-height: 400px;
+  }
 }
 
 .about-text {
@@ -642,6 +655,26 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.mobile-close-btn {
+  position: absolute;
+  top: 24px;
+  right: var(--spacing-lg);
+  padding: 0.5rem;
+  z-index: 1600;
+  color: white;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.mobile-close-btn:hover {
+  transform: scale(1.1);
 }
 
 .mobile-menu-content {

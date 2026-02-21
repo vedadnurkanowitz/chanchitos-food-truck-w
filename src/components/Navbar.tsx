@@ -88,7 +88,7 @@ export default function Navbar() {
             aria-label="Toggle menu"
             style={{ zIndex: 2000, position: "relative" }} // ensure it stays over the full screen menu
           >
-            {isOpen ? <X size={28} color="white" /> : <Menu size={28} />}
+            {isOpen ? <X size={28} color="transparent" /> : <Menu size={28} />}
           </button>
         </div>
       </header>
@@ -102,6 +102,13 @@ export default function Navbar() {
             exit="closed"
             variants={menuVariants as any}
           >
+            <button
+              className="mobile-close-btn"
+              onClick={() => setIsOpen(false)}
+              aria-label="Close menu"
+            >
+              <X size={32} color="white" />
+            </button>
             <div className="mobile-menu-content">
               {navLinks.map((link, i) => (
                 <motion.a
