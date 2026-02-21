@@ -1,0 +1,182 @@
+---
+import { MapPin, Clock, Phone, Mail, Instagram, Facebook } from 'lucide-react';
+---
+
+<footer id="location" class="footer">
+  <div class="container footer-container">
+    
+    <div class="footer-brand">
+      <h3 class="footer-logo">Los <span class="highlight">Chanchitos</span></h3>
+      <p class="footer-tagline">Authentic Mexican Food Truck in the Heart of Seward, Alaska.</p>
+      
+      <div class="social-links">
+        <a href="#" aria-label="Instagram" class="social-btn"><Instagram size={20} className="social-icon" /></a>
+        <a href="#" aria-label="Facebook" class="social-btn"><Facebook size={20} className="social-icon" /></a>
+      </div>
+    </div>
+
+    <div class="footer-info">
+      <div class="info-group">
+        <h4 class="info-title">Location</h4>
+        <div class="info-item">
+          <MapPin size={18} className="info-icon" />
+          <p>208 4th Ave Outdoor Lot<br/>Seward, AK 99664</p>
+        </div>
+      </div>
+
+      <div class="info-group">
+        <h4 class="info-title">Hours</h4>
+        <div class="info-item">
+          <Clock size={18} className="info-icon" />
+          <div>
+            <p><strong>Thursday – Tuesday</strong></p>
+            <p>Breakfast & Lunch: 10:00 AM – 2:00 PM</p>
+            <p>Dinner: 5:00 PM – 9:00 PM</p>
+            <p class="highlight-text">*We stay open until we sell out!*</p>
+            <p class="closed-text">*We are closed on Wednesdays*</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-group">
+        <h4 class="info-title">Contact</h4>
+        <div class="info-item">
+          <Phone size={18} className="info-icon" />
+          <p>907.491.1906</p>
+        </div>
+        <div class="info-item">
+          <Mail size={18} className="info-icon" />
+          <p>chanchitosfoodtruckalaska@gmail.com</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; {new Date().getFullYear()} Los Chanchitos. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--color-primary);
+    color: white;
+    padding-top: var(--spacing-xl);
+  }
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+  }
+
+  @media (min-width: 768px) {
+    .footer-container {
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+
+  .footer-logo {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    color: white;
+  }
+
+  .footer-logo .highlight {
+    color: var(--color-secondary);
+  }
+
+  .footer-tagline {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .social-links {
+    display: flex;
+    gap: var(--spacing-sm);
+  }
+
+  .social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .social-btn:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    transform: translateY(-2px);
+  }
+
+  .footer-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  @media (min-width: 640px) {
+    .footer-info {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .footer-info {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .info-title {
+    font-size: 1.25rem;
+    color: var(--color-secondary);
+    margin-bottom: var(--spacing-md);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: var(--spacing-sm);
+  }
+
+  .info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+  }
+
+  .info-icon {
+    color: var(--color-secondary);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .highlight-text {
+    color: var(--color-secondary);
+    font-weight: 600;
+    margin-top: var(--spacing-sm);
+  }
+
+  .closed-text {
+    color: #fca5a5;
+    font-weight: 600;
+  }
+
+  .footer-bottom {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: var(--spacing-md) 0;
+    text-align: center;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+</style>

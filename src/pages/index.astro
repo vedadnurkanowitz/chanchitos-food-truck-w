@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
+import Menu from '../components/Menu';
+import AboutSection from '../components/AboutSection';
+import LocationFooter from '../components/LocationFooter.astro';
+---
+
+<Layout title="Chanchitos Food Truck | Authentic Mexican Food in Seward, AK">
+	<Navbar client:load />
+	<main>
+		<Hero client:load />
+    <Menu client:visible />
+    <AboutSection client:visible />
+	</main>
+  <LocationFooter />
+</Layout>
